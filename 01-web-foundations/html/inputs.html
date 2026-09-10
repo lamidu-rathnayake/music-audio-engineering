@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- we can use this ad the volum chennel or eq knob -->
+    <input type="range" name="vol" id="1" min="0" max="100" value="10">
+    <!-- i have defined functiona and input even listener to chane the value -->
+    <p id="2">0</p> 
+    
+    <br>
+
+    <!-- labels and "for" attribute -->
+    <!-- "for" matches the id of the range input -->
+    <label for="volumeSlider">Volume Control</label>
+    <input type="range" id="volumeSlider" name="vol">
+    
+    <br>
+
+    <!-- this is how we import audio file to the application -->
+    <input type="file" accept="audio/*">
+
+
+    <script>
+        const range = document.getElementById("1")
+        const ptag = document.getElementById("2");
+
+        range.addEventListener("input", ()=>{
+            ptag.textContent = range.value;
+        })
+
+    </script>
+</body>
+</html>

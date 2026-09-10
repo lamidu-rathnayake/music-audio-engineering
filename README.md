@@ -1,289 +1,111 @@
-# Music & Audio Engineering — 2-Year Roadmap
-
-**Timeline:** September 2026 → September 2028  
-**Career target:** Music / Audio Software Engineer  
-**Current stage:** HTML fundamentals; completing 2nd-year university finals and preparing for 3rd year.
-
-## Mission
-
-Build one evolving web-based music/audio application with Web Audio, DSP, Music Information Retrieval (MIR), and selected AI/ML capabilities while developing the engineering ability to understand, debug, profile, and extend the system without depending on AI.
-
-> **Learn → Implement → Test → Profile → Document → Revisit Deeply**
-
-## Learning Sequence
-
-```text
-HTML
- ↓
-CSS
- ↓
-JavaScript + DOM + Browser APIs
- ↓
-Web Audio API
- ↓
-Canvas + Audio Visualization
- ↓
-DSP + Mathematics
- ↓
-AudioWorklet + Real-Time Audio
- ↓
-TypeScript
- ↓
-React / Next.js
- ↓
-Music Information Retrieval
- ↓
-Python + ML
- ↓
-C++ / JUCE
- ↓
-Optional WebAssembly
- ↓
-University Final Audio + AI Project
-```
-
-# Complete Roadmap
-
-## Year 1 — Web + Audio Engineering
-
-### Months 1–2 — Web Foundations
-
-**HTML:** semantic HTML, document structure, `html/head/body`, metadata, `title`, `meta`, `link`, scripts, headings, paragraphs, lists, links, images, `figure/figcaption`, forms, labels, inputs, buttons, selects, textareas, validation, `<audio>`, `<video>`, `<source>`, file input, `data-*`, accessibility, ARIA, keyboard/focus, DOM structure, attributes vs properties, resource loading.
-
-**CSS:** selectors, cascade, specificity, inheritance, box model, display, positioning, Flexbox, Grid, responsive design, media queries, units, variables, transitions, transforms, animations, typography, accessibility.
-
-**JavaScript:** variables/types, operators, conditionals, loops, functions, scope, closures, arrays, objects, destructuring, spread/rest, modules, classes, errors, Promises, async/await, events, DOM, browser APIs, JSON, Fetch, local storage basics, debugging.
-
-**Programming:** abstraction, decomposition, state, control flow, functions, modularity, data transformation, encapsulation, immutability basics, debugging, error handling.
-
-**Project — Audio Laboratory v0.1:** load audio, play/pause, seek, volume, playback speed, track information, using vanilla HTML/CSS/JS.
-
-### Months 3–4 — Web Audio API
-
-Learn `AudioContext`, `AudioNode`, `AudioParam`, source/destination nodes, `GainNode`, `StereoPannerNode`, `BiquadFilterNode`, `DelayNode`, `AnalyserNode`, `OscillatorNode`, `AudioBufferSourceNode`, connections, graph architecture, lifecycle and cleanup.
-
-Programming: composition, interfaces, dependencies, event-driven programming, state machines, resource ownership/lifecycle.
-
-**Project:**
-```text
-Source → Gain → Filter → Pan → Analyser → Destination
-```
-
-### Months 5–6 — Visualization + Performance
-
-Canvas 2D, drawing, coordinates, animation loops, `requestAnimationFrame`, waveform, amplitude, RMS, peak, frequency spectrum, FFT concept, frequency bins, sample rate, typed arrays, buffers, producer/consumer thinking, time complexity, memory allocation.
-
-**Project:**
-```text
-Audio → AnalyserNode → TypedArray → Canvas
-```
-
-Build waveform, spectrum, RMS and peak visualizers.
-
-### Months 7–8 — DSP Fundamentals
-
-**Math:** algebra, trigonometry, logarithms, complex numbers, vectors, basic calculus, discrete mathematics, sampling, Nyquist-Shannon theorem, aliasing, quantization, time/frequency domains, convolution.
-
-**DSP:** oscillators, FIR, IIR, biquads, low/high/band-pass, notch, delay, gain, distortion, envelope, compression basics.
-
-**Numerical programming:** floating-point behavior, precision, typed arrays, numerical stability, complexity, modular DSP.
-
-**Project:** interactive DSP chain with filter, gain, delay and distortion.
-
-### Months 9–10 — AudioWorklet + Real-Time Audio
-
-AudioWorklet, AudioWorkletNode, AudioWorkletProcessor, worklet global scope, render quantum, MessagePort, parameter automation, main-thread/worklet communication, real-time constraints.
-
-Study allocation avoidance, blocking, synchronization, messaging overhead, garbage generation, buffer handling and latency.
-
-```text
-Main Thread → AudioWorkletNode → AudioWorkletProcessor → DSP
-```
-
-### Months 11–12 — TypeScript + React
-
-**TypeScript:** primitive types, interfaces, type aliases, unions, narrowing, generics, utility types, modules, strict mode, type-safe APIs.
-
-**React:** components, props, state, hooks, effects, refs, context, composition, controlled components, rendering behavior, memoization and performance.
-
-Architecture:
-```text
-UI → Application State → Audio Engine → Web Audio → AudioWorklet
-```
-
-Keep DSP out of React components.
-
-**Project:** Audio Studio v1.0.
-
-# Year 2 — Music Intelligence + Native Audio + Final Project
-
-### Months 13–14 — Music Information Retrieval
-
-STFT, windowing, FFT, spectrograms, Mel scale, MFCC, spectral centroid, rolloff, flux, zero-crossing rate, chroma, autocorrelation, pitch detection, onset detection, beat tracking and tempo estimation.
-
-```text
-Audio → STFT → Feature Extraction → Music Features
-```
-
-### Months 15–16 — Python + ML
-
-**Python:** Python fundamentals, NumPy, SciPy, pandas, matplotlib, scientific computing, notebooks.
-
-**ML:** datasets, preprocessing, features, labels, train/validation/test, loss, optimization, overfitting, regularization, metrics.
-
-**Deep learning:** tensors, neural networks, activations, backpropagation, CNNs, embeddings, basic attention.
-
-Choose **one** main audio-ML problem: classification, instrument recognition, similarity, mood or genre classification.
-
-```text
-Audio → Spectrogram → Feature Representation → Model → Prediction
-```
-
-### Months 17–18 — C++ + Native Audio
-
-C++ memory, pointers, references, RAII, classes, templates, STL, vectors, smart pointers, move semantics, const correctness, compilation, linking, debugging and profiling.
-
-Audio buffers, sample processing, real-time constraints, threading basics, lock avoidance and parameter handling. Then investigate JUCE.
-
-Implement one meaningful DSP component in C++; do not rewrite the whole web application.
-
-### Months 19–20 — WebAssembly Research
-
-WASM is optional and evidence-driven.
-
-```text
-C++ → WebAssembly → AudioWorklet → Web Audio
-```
-
-Benchmark JS vs C++ vs WASM for execution time, memory, latency, throughput, complexity and bundle size. A result showing WASM is unnecessary is a valid engineering conclusion.
-
-### Months 21–22 — University Final Project
-
-**Requirements:** problem statement, objectives, stakeholders, functional/non-functional requirements, constraints, assumptions, use cases and success criteria.
-
-**Research:** existing audio applications, MIR methods, ML models, browser limitations, performance constraints and academic literature.
-
-**Design:** system architecture, component diagram, data flow, audio graph, ML pipeline, database/API design if required, deployment architecture.
-
-Build incrementally.
-
-### Months 23–24 — Finalization
-
-Engineering: testing, profiling, security, accessibility, error handling, documentation, deployment, monitoring.
-
-Academic: experiments, evaluation, results, limitations, future work, report, presentation and demonstration.
-
-# DSA Track
-
-Run DSA in parallel.
-
-**Year 1:** Big-O, arrays, strings, linked lists, stacks, queues, hash tables, recursion, sorting, binary search, trees, heaps.
-
-**Year 2:** graphs, BFS, DFS, shortest paths, dynamic programming, greedy algorithms, advanced trees, priority queues, optimization.
-
-Audio applications:
-```text
-Priority Queue → audio event scheduling
-Ring Buffer → streaming audio
-Graph → audio routing
-Hash Map → preset/parameter lookup
-Heap → scheduling
-```
-
-# Performance Engineering
-
-Progressively learn memory allocation, garbage collection, typed arrays, event loop, microtasks, `requestAnimationFrame`, debouncing, throttling, memoization, workers, transferable objects, shared-memory concepts, profiling, CPU/memory snapshots, network profiling, frame-rate monitoring, audio latency, buffer underruns, cache behavior and concurrency.
-
-Rule:
-```text
-Measure → Find bottleneck → Understand cause → Optimize → Measure again
-```
-
-# Testing
-
-Start with manual/browser testing, then unit tests, integration tests, audio-processing tests, regression tests, performance benchmarks, memory/long-running tests, cross-browser testing and ML evaluation.
-
-# SDLC
-
-Every major feature follows:
-```text
-Requirements
- ↓
-Research / Feasibility
- ↓
-Architecture & Design
- ↓
-Implementation
- ↓
-Testing
- ↓
-Deployment
- ↓
-Monitoring
- ↓
-Evaluation
- ↓
-Iteration
-```
-
-# AI-Assisted Engineering Policy
-
-AI is an accelerator, not a substitute for engineering.
-
-**Good uses:** API explanations, test cases, edge cases, architecture review, bug investigation, compiler errors, comparisons, boilerplate, documentation summaries and performance investigation.
-
-**Do not outsource:** architecture you cannot explain, DSP you do not understand, algorithms you cannot implement, academic reasoning, experiments/conclusions, or debugging you have not attempted.
-
-For important concepts:
-```text
-Learn → Implement Yourself → Break It → Debug Yourself → Read Docs → Ask AI → Verify
-```
-
-# Technology Stack
-
-```text
-Web: HTML, CSS, JavaScript, TypeScript, React, Next.js
-Audio: Web Audio API, AudioWorklet, DSP
-AI: Python, NumPy, SciPy, pandas, PyTorch, MIR
-Native: C++, JUCE
-Optional: WebAssembly
-Engineering: DSA, algorithms, mathematics, testing, architecture, performance, Git, Linux, networking, security
-```
-
-# Repository Structure
+# 🎵 Music & Audio Engineering Handbook (2026–2028)
+
+Welcome to my personal handbook and repository for my 2-year self-learning journey in **Music and Audio Software Engineering**. This workspace will serve as my learning lab, reference manual, and incubator for my **University Capstone/Final Project** (a Web-Based Audio + AI/ML Application).
+
+Targeting top-tier creative technology and audio companies (like Spotify, Ableton, and more), this handbook tracks my transition from frontend foundations to real-time Digital Signal Processing (DSP), Music Information Retrieval (MIR), and Machine Learning (ML).
+
+---
+
+## 📊 Learning Timeline & Progress Tracker
+
+Track my active progress and completed milestones below. Each phase corresponds to a folder in this workspace.
+
+> **Current Phase:** 🟩 Phase 1: Web Foundations (Months 1–2)  
+> **Progress:** [░░░░░░░░░░░░░░░░░░░░] 0% Complete
+
+### Year 3: Foundations & Web Audio
+- [ ] **Phase 1: Web Foundations** (Months 1–2) — `01-web-foundations/`
+  - [ ] HTML Semantic Elements, Forms & Accessibility Landmarks
+  - [ ] CSS Box Model, Flexbox/Grid, Custom Properties & Animations
+  - [ ] JS Scope, Closures, Event Loop, Promises & Async/Await
+  - [ ] **Deliverable:** Audio Laboratory v0.1 *(Simple vanilla audio player)*
+- [ ] **Phase 2: Web Audio API** (Months 3–4) — `02-web-audio/`
+  - [ ] AudioContext, base nodes (`GainNode`, `BiquadFilterNode`, etc.)
+  - [ ] Core audio graph architecture & precise scheduling
+  - [ ] **Deliverable:** Interactive Multi-Node Synthesizer/Web Effects Rack
+- [ ] **Phase 3: Visualization & Performance** (Months 5–6) — `03-visualization/`
+  - [ ] Canvas 2D API for real-time visualization
+  - [ ] AnalyserNode, FFT bins, waveforms, and spectrums
+  - [ ] **Deliverable:** Audio Waveform & Frequency Spectrograph Analyzer
+- [ ] **Phase 4: DSP Fundamentals** (Months 7–8) — `04-dsp/`
+  - [ ] Sampling Theorem (Nyquist-Shannon), aliasing, and complex numbers
+  - [ ] Convolution, impulse response, and IIR/FIR filter design
+  - [ ] **Deliverable:** Custom DSP Filtering Engine
+- [ ] **Phase 5: AudioWorklet & Real-Time Audio** (Months 9–10) — `05-audioworklet/`
+  - [ ] Multi-threaded audio rendering with AudioWorkletProcessor
+  - [ ] MessagePort data passing (main thread ↔ audio thread)
+  - [ ] **Deliverable:** Low-Latency Real-Time Synthesizer (Zero main-thread blocking)
+- [ ] **Phase 6: TypeScript & React** (Months 11–12) — `06-typescript-react/`
+  - [ ] Component architecture, React state vs. Audio processing state
+  - [ ] TypeScript strict mode, generics, type-safe audio parameters
+  - [ ] **Deliverable:** Audio Studio v1.0 (Completed Year 3 Milestone)
+
+### Year 4: Specialization & University Capstone
+- [ ] **Phase 7: Music Information Retrieval (MIR)** (Months 13–14) — `07-mir/`
+  - [ ] STFT spectrograms, MFCC feature extraction, zero-crossing rate
+  - [ ] Pitch detection, beat tracking, and tempo estimation
+  - [ ] **Deliverable:** Feature Extraction Pipeline (Audio Analyzer)
+- [ ] **Phase 8: Python & Machine Learning** (Months 15–16) — `08-machine-learning/`
+  - [ ] PyTorch basics, deep learning for audio, spectrographic neural networks
+  - [ ] Training/Evaluation of an audio classifier (genre/instrument recognition)
+  - [ ] **Deliverable:** Trained ML Audio Classifier
+- [ ] **Phase 9: C++ & Native Audio** (Months 17–18) — `09-cpp-audio/`
+  - [ ] Modern C++, stack vs. heap, RAII, real-time-safe coding disciplines
+  - [ ] JUCE Framework for desktop/native audio plugins
+  - [ ] **Deliverable:** Native DSP audio effect plugin (VST3/AU)
+- [ ] **Phase 10: WebAssembly Research** (Months 19–20) — `10-wasm/`
+  - [ ] C++/Rust compilation to WebAssembly (WASM)
+  - [ ] SharedArrayBuffer and lock-free ring buffers in WASM
+  - [ ] **Deliverable:** High-Performance WASM-Based Web Audio Worklet
+- [ ] **Phase 11: University Final Project** (Months 21–24) — `11-final-project/`
+  - [ ] Comprehensive research, design, implementation, and dissertation
+  - [ ] **Deliverable:** Final Capstone Project (Web Audio + AI/ML App)
+
+---
+
+## 📂 Repository Structure
+
+The workspace is organized logically into chapters corresponding to the learning phases:
 
 ```text
 music-audio-engineering/
-├── README.md
-├── 01-web-foundations/
-├── 02-web-audio/
-├── 03-visualization/
-├── 04-dsp/
-├── 05-audioworklet/
-├── 06-typescript-react/
-├── 07-mir/
-├── 08-machine-learning/
-├── 09-cpp-audio/
-├── 10-wasm/
-└── 11-final-project/
+├── README.md                  # This handbook guide & progress tracker
+├── 01-web-foundations/        # HTML, CSS, & Vanilla JS experiments
+├── 02-web-audio/              # Web Audio API graphs & scheduling
+├── 03-visualization/          # Canvas 2D & GPU-accelerated visualizations
+├── 04-dsp/                    # Mathematics & Digital Signal Processing algorithms
+├── 05-audioworklet/           # Real-time multi-threaded audio processing
+├── 06-typescript-react/       # State architecture & type-safe audio apps
+├── 07-mir/                    # Feature extraction & Music Info Retrieval
+├── 08-machine-learning/       # PyTorch, models, & client-side inference
+├── 09-cpp-audio/              # Low-level systems, C++, and JUCE plugins
+├── 10-wasm/                   # WebAssembly compilation & optimization
+├── 11-final-project/          # University capstone project directory
+├── books/                     # Electronic textbooks and slides library
+└── roadmaps/                  # Detailed, comprehensive reference roadmaps
 ```
 
-# Progress Checklist
+---
 
-For every important concept:
-```text
-[ ] Understand theory
-[ ] Explain without notes
-[ ] Implement a basic example
-[ ] Debug a broken example
-[ ] Use it in the project
-[ ] Test it
-[ ] Profile it when relevant
-[ ] Document it
-```
+## 🛠️ Technology Stack
 
-# Career Target
+* **Frontend/Web:** HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Next.js
+* **Audio Engine:** Web Audio API, Canvas (Visuals), AudioWorklets
+* **DSP & Systems:** C++, CMake, JUCE, WebAssembly (WASM)
+* **AI & Machine Learning:** Python, NumPy, SciPy, PyTorch, Librosa
+* **Engineering Tools:** Git, Docker, Chrome DevTools (Performance/Memory profiling)
 
-The long-term target is **Music / Audio Software Engineer**, with depth across Web Audio, DSP, C++, TypeScript, ML/MIR, algorithms and software engineering. The objective is to become capable of taking an unfamiliar audio problem, researching it, designing a solution, implementing it, testing it, profiling it, explaining it and improving it independently.
+---
 
-> **Build the web interface. Understand the audio engine. Understand the mathematics. Understand the algorithms. Understand the AI. Remain capable of solving the problem without AI.**
+## 🧠 Core Philosophy & Learning Policy
+
+> "AI is an accelerator, not a substitute for understanding."
+
+For every core concept, I follow this loop:
+1. **Learn:** Study the underlying mathematics/theory.
+2. **Implement:** Write the implementation yourself from scratch (No AI generation).
+3. **Break & Debug:** Intentionally break the code and debug it using browser tools/debuggers.
+4. **Test & Profile:** Benchmark performance, ensuring no memory allocations on the audio thread.
+5. **Verify with AI:** Review with an AI coding assistant to find edge cases, refine performance, and write exhaustive tests.
+
+*For detailed learning sheets, weekly study schedules, and exhaustive topic lists, refer to the [Full 2-Year Roadmap](./roadmaps/music_audio_ai_two_year_roadmap.md) and the [Advanced Checklist](./roadmaps/2year-roadmap.md).*
