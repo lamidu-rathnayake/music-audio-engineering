@@ -16,6 +16,11 @@ Track my active progress and completed milestones below. Each phase corresponds 
 ### Year 3: Foundations & Web Audio
 - [ ] **Phase 1: Web Foundations** (Months 1–2) — `01-web-foundations/`
   - [ ] HTML Semantic Elements, Forms & Accessibility Landmarks
+    - [ ] Document Structure & Metadata (`<!DOCTYPE>`, `<html>`, `<head>`, `<body>`, `<meta>`, viewport, favicon)
+    - [ ] Semantic HTML Markup (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, headings, lists, `<figure>`)
+    - [ ] HTML5 Media Elements (`<audio>`, `<video>`, `<source>`, `<track>`, preloading, `data-*` attributes)
+    - [ ] Advanced Form Controls & Validation (`<form>`, `<label>`, `<input>` types, `<select>`, `<textarea>`, autocomplete, browser validation)
+    - [ ] Web Accessibility (A11y) & Landmarks (`aria-*`, keyboard focus navigation, screen reader landmarks, accessible names)
   - [ ] CSS Box Model, Flexbox/Grid, Custom Properties & Animations
   - [ ] JS Scope, Closures, Event Loop, Promises & Async/Await
   - [ ] **Deliverable:** Audio Laboratory v0.1 *(Simple vanilla audio player)*
