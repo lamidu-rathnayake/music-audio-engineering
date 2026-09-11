@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin Dashboard</title>
+        <style>
+            body {
+                font-family: system-ui, sans-serif;
+                background: #f9fafb;
+                padding: 2rem;
+            }
+            .dashboard {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            button {
+                padding: 0.5rem 1rem;
+                background: #dc2626;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            #secure-data {
+                padding: 1rem;
+                background: #f3f4f6;
+                border-left: 4px solid #3b82f6;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dashboard">
+            <div class="header">
+                <h1 style="margin: 0">Admin Dashboard</h1>
+                <button id="logoutBtn">Log Out</button>
+            </div>
+
+            <p>
+                If you can see the data below, your HttpOnly cookie was
+                validated by the API.
+            </p>
+
+            <div id="secure-data">Loading secure data...</div>
+        </div>
+
+        <script>
+            const API_BASE_URL = "http://localhost:5161/api";
+
+            // 1. Fetch Secure Data on Page Load
+            window.addEventListener("DOMContentLoaded", async () => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/admin/data`, {
+                        method: "GET",
+                        // CRITICAL: This tells the browser to attach the HttpOnly cookie to the request.
+                        credentials: "include",
+                    });
+
+                    if (response.status === 401 || response.status === 403) {
+                        // 401 = No valid cookie. 403 = Valid cookie, but not an Admin.
+                        // Boot them back to the login screen.
+                        window.location.href = "index.html";
+                        return;
+                    }
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.getElementById("secure-data").innerText =
+                            JSON.stringify(data, null, 2);
+                    }
+                } catch (error) {
+                    document.getElementById("secure-data").innerText =
+                        "Error connecting to the API.";
+                }
+            });
+
+            // 2. Handle Logout
+            document
+                .getElementById("logoutBtn")
+                .addEventListener("click", async () => {
+                    await fetch(`${API_BASE_URL}/logout`, {
+                        method: "POST",
+                        credentials: "include",
+                    });
+                    // After the API deletes the cookie, redirect to login
+                    window.location.href = "index.html";
+                });
+        </script>
+    </body>
+</html>

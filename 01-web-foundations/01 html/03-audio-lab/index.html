@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>audio lab</title>
+    </head>
+    <body>
+        <main>
+            <h1>Audio Laboratory</h1>
+
+            <section
+                id="audio-engine"
+                data-status="suspened"
+                data-track-bpm="120"
+            >
+                <h2>The Native Media Decoder</h2>
+
+                <audio
+                    id="main-player"
+                    controls
+                    preload="metadata"
+                    crossorigin="anonymous"
+                >
+                    <!-- first try the wave file -->
+                    <source src="sample.wav" type="audio/wav" />
+                    <!-- if fails then try the mp3 file -->
+                    <source src="sample.mp3" type="audio/mpeg" />
+                </audio>
+            </section>
+
+            <!-- The Custom UI Section -->
+            <section id="custom-interface">
+                <h2>2. Custom Hardware Interface</h2>
+
+                <!-- We use a form to logically group our DSP parameters -->
+                <form id="dsp-controls">
+                    <fieldset>
+                        <legend>Transport & Gain Staging</legend>
+
+                        <!-- type="button" ensures clicking this doesn't reload the page -->
+                        <button type="button" id="play-pause-btn">
+                            Play / Pause
+                        </button>
+
+                        <br /><br />
+
+                        <!-- The Range Input (Our Fader) -->
+                        <label for="master-gain">Master Gain (dB)</label>
+                        <input
+                            type="range"
+                            id="master-gain"
+                            min="-60"
+                            max="6"
+                            step="0.1"
+                            value="-12"
+                        />
+
+                        <!-- A read-only number input to display the exact dB value -->
+                        <input
+                            type="number"
+                            id="gain-display"
+                            value="-12"
+                            readonly
+                        />
+                    </fieldset> 
+                </form>
+            </section>
+
+            <hr />
+        </main>
+    </body>
+</html>
