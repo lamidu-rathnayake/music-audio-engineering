@@ -15,65 +15,75 @@ Targeting top-tier creative technology companies like [Spotify](https://www.spot
 *Academic Alignment:* Natural Language Processing (CCS3356), Machine Learning (CCS4340), Linear Algebra (SMA2202).
 
 - [ ] **Phase 1: Web Foundations & Secure Delivery** (`01-web-foundations/`)
-    - [x] Document Structure & Metadata (`<!DOCTYPE>`, `<html>`, viewport).
-    - [x] Semantic HTML Markup (`<header>`, `<main>`, `<section>`, `<footer>`).
-    - [ ] HTML5 Media Elements (`<audio>`, `<source>`, `preload`, `data-*`).
-    - [ ] Form Controls, State Limits (`readonly`, `min`, `max`), and Web Accessibility (A11y).
-    - [ ] CSS Box Model, Flexbox/Grid, and Custom Properties.
-    - [x] **Secure Architecture:** Same-Origin setup via ASP.NET Core `wwwroot`, CORS elimination, `__Host-` cookies, `SameSite=Strict`.
+    - [x] Document Structure & Metadata. **[Concept: DOM Tree Parsing & Render Blocking]**
+    - [x] Semantic HTML Markup. **[Concept: Accessibility Tree & Screen Reader Traversal]**
+    - [ ] HTML5 Media Elements (`<audio>`, `preload`, `data-*`). **[Concept: Native Media Decoding & Memory Allocation]**
+    - [ ] Form Controls & Validation. **[Concept: Native State Mutation & Event Delegation]**
+    - [ ] CSS Box Model, Flexbox/Grid. **[Concept: Browser Layout Engine & Repaint Mechanics]**
+    - [x] Secure Architecture (ASP.NET `wwwroot`, `__Host-` cookies). **[Concept: Same-Origin Policy & Stateful vs Stateless Auth]**
     - [ ] **Deliverable:** Audio Laboratory v0.1 (Securely hosted vanilla audio player).
+
 - [ ] **Phase 2: Web Audio API** (`02-web-audio/`)
-    - [ ] `AudioContext` lifecycle and native node routing (`GainNode`, `BiquadFilterNode`).
-    - [ ] Core audio graph architecture and precise scheduling.
+    - [ ] `AudioContext` lifecycle and native node routing. **[Concept: Hardware Audio Clock vs V8 JavaScript Clock]**
+    - [ ] Core audio graph architecture and precise scheduling. **[Concept: Directed Acyclic Graphs (DAG) & Signal Flow]**
     - [ ] **Deliverable:** Interactive Multi-Node Synthesizer/Web Effects Rack.
+
 - [ ] **Phase 3: Visualization & Performance** (`03-visualization/`)
-    - [ ] Canvas 2D API for 60fps real-time rendering.
-    - [ ] `AnalyserNode`, FFT bins, waveforms, and spectrums.
+    - [ ] Canvas 2D API for 60fps real-time rendering. **[Concept: The GPU Render Loop & `requestAnimationFrame`]**
+    - [ ] `AnalyserNode`, FFT bins, and waveforms. **[Concept: Time-Domain vs Frequency-Domain Representation]**
     - [ ] **Deliverable:** Audio Waveform & Frequency Spectrograph Analyzer.
+
 - [ ] **Phase 4: DSP Fundamentals** (`04-dsp/`)
-    - [ ] Sampling Theorem, aliasing, quantization, complex numbers.
-    - [ ] Convolution, impulse response, and IIR/FIR filter design.
+    - [ ] Sampling Theorem, aliasing, quantization. **[Concept: Continuous vs Discrete-Time Signals]**
+    - [ ] Convolution and IIR/FIR filter design. **[Concept: Linear Time-Invariant (LTI) Systems]**
     - [ ] **Deliverable:** Custom DSP Filtering Engine.
+
 - [ ] **Phase 5: AudioWorklet & Real-Time Audio** (`05-audioworklet/`)
-    - [ ] Multi-threaded audio rendering with `AudioWorkletProcessor`.
-    - [ ] Lock-free ring buffer communication and `MessagePort` data passing.
+    - [ ] Multi-threaded audio rendering with `AudioWorkletProcessor`. **[Concept: True Multi-Threading in V8 Environment]**
+    - [ ] Lock-free ring buffer communication. **[Concept: Single-Producer/Single-Consumer (SPSC) Queues & Memory Safety]**
     - [ ] **Deliverable:** Low-Latency Real-Time Synthesizer (Zero main-thread blocking).
-- [ ] **Phase 6: React State Architecture & Frontend Integration (`06-typescript-react/`)
-    - [ ] React Reconciliation vs. The V8 Engine: Mastering useRef, useMemo, and useEffect to manipulate DOM nodes and C++ WebAssembly modules without triggering re-renders that stall the audio thread.
-    - [ ] Decoupled State Management: Architecting a strict boundary between the React Virtual DOM (which handles UI rendering) and the AudioContext (which handles the DSP graph).
-    - [ ] Audio Node Binding: Safely passing user input from React components directly into AudioParam scheduling methods (linearRampToValueAtTime) without creating memory leaks.
-    - [ ] Build Tooling Agnosticism: Configuring Vite or Next.js purely to bundle your TypeScript and React code into static assets for your secure ASP.NET Core wwwroot environment.
-    - [ ] Secure API Consumption: Fetching presets and heavy audio buffers from your backend using strictly typed requests that automatically forward your __Host- cookies.
+
+- [ ] **Phase 6: React State Architecture & Frontend Integration** (`06-typescript-react/`)
+    - [ ] React Reconciliation vs. The V8 Engine. **[Concept: Virtual DOM Diffing & Garbage Collection Avoidance]**
+    - [ ] Decoupled component architecture. **[Concept: Separation of Concerns (UI Thread vs Audio Thread)]**
+    - [ ] Static Export pipeline (Vite/Next.js). **[Concept: Build-Time Compilation vs Runtime Execution]**
     - [ ] **Deliverable:** Audio Studio v1.0.
 
 ### Year 4: Specialization, Native Systems & Capstone (Level 4)
 *Academic Alignment:* Deep Learning (CCS4310), Tensors & Graphs (CCS4354), Functional Programming (CCS4351), Application Security (CCS4352).
 
 - [ ] **Phase 7: Music Information Retrieval (MIR)** (`07-mir/`)
-    - [ ] STFT spectrograms, MFCC feature extraction, zero-crossing rate.
-    - [ ] Pitch detection, beat tracking, and tempo estimation.
+    - [ ] STFT spectrograms, MFCC feature extraction. **[Concept: Short-Time Fourier Transform & Perceptual Scaling]**
+    - [ ] Pitch detection, beat tracking. **[Concept: Autocorrelation & Time-Domain Periodicity]**
     - [ ] **Deliverable:** Feature Extraction Pipeline.
+
 - [ ] **Phase 8: Python, Machine Learning & M2M Security** (`08-machine-learning/`)
-    - [ ] Scientific computing (NumPy, SciPy, PyTorch) for spectrographic neural networks.
-    - [ ] Sequence modeling and transformers (leveraging NLP foundation).
-    - [ ] **M2M Security:** Machine-to-Machine authentication (API Keys/OAuth Client Credentials) for the Python ML service.
+    - [ ] Scientific computing (PyTorch, NumPy). **[Concept: Vectorized Array Operations & Tensor Math]**
+    - [ ] Sequence modeling and transformers. **[Concept: Attention Mechanisms & Latent Space Representation]**
+    - [ ] Headless ML microservice (FastAPI). **[Concept: Backend Service Isolation & Reverse Proxying]**
+    - [ ] M2M Security (API Keys/OAuth Client Credentials). **[Concept: Zero-Trust Networking & Service Identity]**
     - [ ] **Deliverable:** Securely Connected ML Audio Classifier Service.
+
 - [ ] **Phase 9: C++ & Native Audio** (`09-cpp-audio/`)
-    - [ ] Modern C++, stack vs. heap, RAII, real-time-safe coding disciplines.
-    - [ ] JUCE framework for desktop/native audio plugins.
+    - [ ] Modern C++ & RAII. **[Concept: Stack vs. Heap Allocation & Pointer Arithmetic]**
+    - [ ] JUCE framework for desktop audio plugins. **[Concept: Native OS Audio Abstraction (CoreAudio/ASIO)]**
     - [ ] **Deliverable:** Native DSP audio effect plugin (VST3/AU).
+
 - [ ] **Phase 10: WebAssembly Research & Integration** (`10-wasm/`)
-    - [ ] Benchmarking JavaScript vs. C++/Rust compiled to WebAssembly (WASM).
-    - [ ] SharedArrayBuffer implementations in WASM.
+    - [ ] Benchmarking JavaScript vs. C++/Rust WASM. **[Concept: JIT Compilation vs Pre-compiled Bytecode Execution]**
+    - [ ] SharedArrayBuffer implementations. **[Concept: Linear Memory & Thread Synchronization]**
     - [ ] **Deliverable:** High-Performance WASM-Based Web Audio Worklet.
+
 - [ ] **Phase 11: Capstone Architecture & Security Design** (`11-final-project/`)
-    - [ ] System architecture, audio graph flow, and ML pipeline mapping.
-    - [ ] **Enterprise Identity:** Backend-For-Frontend (BFF) Pattern using OAuth 2.0 / OpenID Connect (OIDC).
+    - [ ] System architecture and ML pipeline mapping. **[Concept: Distributed Systems & Data Flow Modeling]**
+    - [ ] Backend-For-Frontend (BFF) Pattern using OIDC. **[Concept: Federated Identity & Delegated Authorization]**
     - [ ] **Deliverable:** System Architecture Documentation & Core Multi-Service Build.
+
 - [ ] **Phase 12: Hardening, Security Review & Defense** (`12-defense/`)
-    - [ ] Comprehensive security audit (XSS, CSRF, CORS).
-    - [ ] Audio engine latency testing, buffer underrun profiling.
+    - [ ] Comprehensive security audit (XSS, CSRF, CORS). **[Concept: Threat Modeling & Vulnerability Mitigation]**
+    - [ ] Audio engine latency testing. **[Concept: CPU Profiling & Real-Time Constraints]**
     - [ ] **Deliverable:** Final Production Release & University Capstone Defense.
+
 ---
 
 ## 🏛️ University Academic Alignment
@@ -109,7 +119,7 @@ music-audio-engineering/
 ├── 05-audioworklet/           # Real-time multi-threaded audio processing
 ├── 06-typescript-react/       # State architecture & type-safe audio apps
 ├── 07-mir/                    # Feature extraction & Music Info Retrieval
-├── 08-machine-learning/       # PyTorch, models, & M2M secure endpoints
+├── 08-machine-learning/       # PyTorch, FastAPI, & M2M secure endpoints
 ├── 09-cpp-audio/              # Low-level systems, C++, and JUCE plugins
 ├── 10-wasm/                   # WebAssembly compilation & optimization
 ├── 11-final-project/          # University capstone project directory & BFF architecture
