@@ -2,17 +2,6 @@
 
 ### 🟧 Month 0: Setup (Sep 2026, now)
 
-*Exit: a working repo, CI, and a log habit before classes start.*
-
-- [ ] 📖 Create GitHub repo `music-audio-engineering` with the structure in Section 12
-- [ ] 📖 Add this README; commit convention `phase-NN: message`; tag `phase-NN-done` at each phase exit
-- [ ] 📖 Write `CLAUDE.md`: layer languages, capstone boundary, audio-thread rules (no allocation, no locks, no blocking)
-- [ ] 📖 CI skeleton (lint + unit tests on push)
-- [ ] 📖 Weekly log template `docs/log/YYYY-Www.md`
-- [ ] 📖 Send the assumption questions (Section 3) to the department/registrar
-
----
-
 ### 🟦 Level 3, Semester 1 (Months 1–6)
 
 #### 🎓 University track
