@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>admin page</h1>
+        <h2 id="MessageFromBackend"></h2>
+        <button id="getAdminData">Get Admin Message</button>
+
+        <script>
+            const backendMessage = document.getElementById("MessageFromBackend");
+
+            // 1. Make the arrow function asynchronous
+            document.getElementById("getAdminData").addEventListener("click", async () => {
+                    try {
+                        // 2. Await the network call and explicitly include the cookie
+                        // but you have to include the cookie when fetching subsequence request for authorization
+                        const response = await fetch(
+                            "https://localhost:5269/api/admin/data",
+                            {
+                                method: "GET",
+                                credentials: "include", // CRITICAL: Attaches the HttpOnly cookie
+                            },
+                        );
+
+                        // Handle security rejections
+                        if (response.status === 401 || response.status === 403) {
+                            backendMessage.textContent = "Unauthorized: Invalid or missing session.";
+                            backendMessage.style.color = "red";
+                            return;
+                        }
+
+                        if (response.ok) {
+                            // 3. Await the JSON parsing
+                            const data = await response.json();
+
+                            // Now you can access the 'message' property from your C# Ok() result
+                            backendMessage.textContent = data.message;
+                            backendMessage.style.color = "green";
+                        }
+                    } catch (error) {
+                        console.log("Network error:", error.message);
+                        backendMessage.textContent = "Backend connection failed.";
+                        backendMessage.style.color = "red";
+                    }
+                });
+        </script>
+    </body>
+</html>
