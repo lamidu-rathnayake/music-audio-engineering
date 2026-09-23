@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Track Configuration</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="config-panel" aria-labelledby="panel-title">
+            <header>
+                <h2 id="panel-title" >Add New Track</h2>
+            </header>
+
+            <form id="add-track-form">
+                <div class="input-group">
+                    <label for="track-name">Track name:</label>
+                    <input type="text" id="track-name" name="trackName" placeholder="e.g., Lead Voice">
+                </div>
+                <div class="input-group">
+                    <label for="track-type">Track Type:</label>
+                    <select id="track-type" name="trackType">
+                        <option value="audio-mono">Audio (mono)</option>
+                        <option value="audio-stereo">Audio (stereo)</option>
+                        <option value="audio-midi">Midi</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="track-volume">Default Volume:</label>
+                    <input type="range" id="track-volume" name="trackVolume" min="0" max="100" value="75" aria-label="Track Volume">
+                </div>
+                <button type="submit">Add Track</button>
+            </form>
+
+            <article class="track-history">
+                <div class="format-info">
+                    <h3>Supported Formats</h3>
+                    <img src="waveform-icon.png" alt="wave-image" width="50" height="20">
+                    <ul>
+                        <li>WAV (Uncompressed)</li>
+                        <li>MP#3 (Compressed)</li>
+                        <li>MIDI (Data)</li>
+                    </ul>
+                    <a href="#help">Read our audio format guild</a>
+                </div>
+            </article>
+
+            <h3>Recent Track</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Track Name</th>
+                        <th>Type</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr data-track-id="001" class="history-row">
+                        <td>Lead Vocals</td>
+                        <td>Mono Audio</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr data-track-id="002" class="history-row">
+                        <td>Drum Bus</td>
+                        <td>Stereo Audio</td>
+                        <td>80%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>

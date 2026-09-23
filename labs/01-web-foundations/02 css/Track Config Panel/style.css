@@ -1,0 +1,30 @@
+:root {
+  --bg-main: #1e1e1e;
+  --bg-panel: #2d2d2d;
+  --text-main: #e0e0e0;
+  --border-color: #444444;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: sans-serif;
+  
+  /* Box model adjustments */
+  margin: 0; 
+  padding: 20px;
+}
+
+.config-panel {
+  background-color: var(--bg-panel);
+  
+  /* Box model: The outline */
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Softens the sharp corners */
+  
+  /* Box model: Inside space (keeps text off the border) */
+  padding: 20px; 
+  
+  /* Content sizing: Locks the panel width */
+  width: 400px; 
+}

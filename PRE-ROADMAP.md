@@ -7,19 +7,20 @@
 # Phase 0: Prerequisite Foundations
 
 ### 1. HTML Fundamentals
-- [ ] HTML fundamentals — the markup language that structures content on a web page
-  - [ ] Document structure — the basic skeleton of an HTML page (`<!DOCTYPE>`, `<html>`, `<head>`, `<body>`)
-  - [ ] Common elements — text, headings, lists, links, images, tables, and their tags
-  - [ ] Forms and inputs — collecting user input with `<form>`, `<input>`, `<button>`, `<select>`
-  - [ ] Semantic HTML — using tags that convey meaning (`<nav>`, `<section>`, `<article>`, `<header>`)
-  - [ ] Attributes — configuring elements with `id`, `class`, `href`, `src`, `data-*`, etc.
-- [ ] Accessibility basics — writing markup that works for all users and assistive tech
-  - [ ] ARIA roles and labels — describing custom UI to screen readers
-  - [ ] Keyboard navigation — ensuring interactive elements work without a mouse
+- [x] HTML fundamentals — the markup language that structures content on a web page
+  - [x] Document structure — the basic skeleton of an HTML page (`<!DOCTYPE>`, `<html>`, `<head>`, `<body>`)
+  - [x] Common elements — text, headings, lists, links, images, tables, and their tags
+  - [x] Forms and inputs — collecting user input with `<form>`, `<input>`, `<button>`, `<select>`
+  - [x] Semantic HTML — using tags that convey meaning (`<nav>`, `<section>`, `<article>`, `<header>`)
+  - [x] Attributes — configuring elements with `id`, `class`, `href`, `src`, `data-*`, etc.
+- [x] Accessibility basics — writing markup that works for all users and assistive tech
+  - [x] ARIA roles and labels — describing custom UI to screen readers
+  - [x] Keyboard navigation — ensuring interactive elements work without a mouse
 
 ### 2. CSS Fundamentals
-- [ ] CSS fundamentals — the language that styles and lays out HTML content
-  - [ ] Selectors and specificity — targeting elements and understanding which rules win
+- [x] CSS fundamentals — the language that styles and lays out HTML content
+  - [X] Selectors and specificity — targeting elements and understanding which rules win
+    - [x] Learned tag, class, id, compound (using comma) and attribute selectors (using input[type="text"])  
   - [ ] Box model — margin, border, padding, and content sizing
   - [ ] Flexbox — one-dimensional layout for rows/columns of UI elements
   - [ ] CSS Grid — two-dimensional layout for complex page/app structures
